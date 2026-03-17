@@ -12,9 +12,16 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Load model + columns
-model = pickle.load(open("../model/model.pkl", "rb"))
-columns = pickle.load(open("../model/columns.pkl", "rb"))
+# # Load model + columns
+# model = pickle.load(open("../model/model.pkl", "rb"))
+# columns = pickle.load(open("../model/columns.pkl", "rb"))
+
+import os
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+model = pickle.load(open(os.path.join(BASE_DIR, "model/model.pkl"), "rb"))
+columns = pickle.load(open(os.path.join(BASE_DIR, "model/columns.pkl"), "rb"))
 
 # -------------------------------
 # Helper Functions (WOW FEATURES)
