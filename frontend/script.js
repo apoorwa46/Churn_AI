@@ -68,7 +68,7 @@ async function predict() {
         alert("⚠️ Please fill all fields before submitting!");
         return;
     }
-    
+
     const HighValue = monthly > 70 ? 1 : 0;
     const LongTerm = tenure > 24 ? 1 : 0;
 
@@ -80,7 +80,7 @@ async function predict() {
         LongTerm
     };
 
-    const res = await fetch("http://127.0.0.1:8000/predict", {
+    const res = await fetch("https://churn-ai-l7ez.onrender.com/predict", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(data)
