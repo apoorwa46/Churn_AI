@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Churn Intelligence System</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="logo">🚀 ChurnAI</div>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="https://github.com/YOUR_REPO" target="_blank">GitHub</a>
+    </div>
+</div>
+<!-- HERO SECTION -->
+<div class="hero">
+    <h1>Customer Churn Intelligence System</h1>
+    <p>
+        Predict customer churn using AI, identify high-risk users, and take
+        data-driven actions with smart retention strategies.
+    </p>
+</div>
+<!-- MAIN -->
+<div class="main">
+    
+
+    <!-- LEFT FORM -->
+    <div class="card form-card">
+
+        
+        <h2>Customer Input</h2>
+
+        <div class="input-group">
+            <input id="tenure" type="number" required>
+            <label>Tenure (months)</label>
+        </div>
+
+        <div class="input-group">
+            <input id="monthly" type="number" required>
+            <label>Monthly Charges</label>
+        </div>
+
+        <div class="input-group">
+            <input id="total" type="number" required>
+            <label>Total Charges</label>
+        </div>
+
+        <button onclick="predict()">Analyze Customer</button>
+    </div>
+
+    <!-- RIGHT RESULTS -->
+    <div class="card result-card">
+        <h2>📊 Prediction Dashboard</h2>
+
+        <div id="resultBox">
+            <p class="placeholder">Enter data to see insights</p>
+        </div>
+
+        <canvas id="chart"></canvas>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
