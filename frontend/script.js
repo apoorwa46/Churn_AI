@@ -72,15 +72,35 @@ async function predict() {
     const HighValue = monthly > 70 ? 1 : 0;
     const LongTerm = tenure > 24 ? 1 : 0;
 
-    const data = {
-        tenure,
-        MonthlyCharges: monthly,
-        TotalCharges: total,
-        HighValue,
-        LongTerm
-    };
+    // const data = {
+    //     tenure,
+    //     MonthlyCharges: monthly,
+    //     TotalCharges: total,
+    //     HighValue,
+    //     LongTerm
+    // };
 
-    const res = await fetch("https://churn-ai-l7ez.onrender.com/predict", {
+    const data = {
+    tenure,
+    MonthlyCharges: monthly,
+    TotalCharges: total,
+
+    gender: document.getElementById("gender").value,
+    Partner: document.getElementById("partner").value,
+    Dependents: document.getElementById("dependents").value,
+    PhoneService: document.getElementById("phone").value,
+    PaperlessBilling: document.getElementById("billing").value,
+    PaymentMethod: document.getElementById("payment").value,
+    Contract: document.getElementById("contract").value
+};
+
+    // const res = await fetch("https://churn-ai-l7ez.onrender.com/predict", {
+    //     method: "POST",
+    //     headers: {"Content-Type": "application/json"},
+    //     body: JSON.stringify(data)
+    // });
+
+    const res = await fetch("http://127.0.0.1:8000/predict", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify(data)
