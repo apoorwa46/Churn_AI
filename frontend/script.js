@@ -94,17 +94,17 @@ async function predict() {
     Contract: document.getElementById("contract").value
 };
 
-    // const res = await fetch("https://churn-ai-l7ez.onrender.com/predict", {
-    //     method: "POST",
-    //     headers: {"Content-Type": "application/json"},
-    //     body: JSON.stringify(data)
-    // });
-
-    const res = await fetch("http://127.0.0.1:8000/predict", {
-        method: "POST",
-        headers: {"Content-Type": "application/json"},
-        body: JSON.stringify(data)
+     const res = await fetch("https://churn-ai-l7ez.onrender.com/predict", {
+         method: "POST",
+         headers: {"Content-Type": "application/json"},
+         body: JSON.stringify(data)
     });
+
+    // const res = await fetch("http://127.0.0.1:8000/predict", {
+    //   method: "POST",
+    //    headers: {"Content-Type": "application/json"},
+    //    body: JSON.stringify(data)
+    //});
 
     const result = await res.json();
 
